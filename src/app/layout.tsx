@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Satisfy, Lato } from 'next/font/google';
 import ModalContainer from '@/components/modals/view';
 import DrawerContainer from '@/components/drawers/view';
@@ -22,7 +22,12 @@ export const metadata: Metadata = {
   title: 'Boat Rental',
   description: 'Find your boat with the best experience.',
   icons: ['/images/logo.svg'],
-  viewport: { width: 'device-width', initialScale: 1, maximumScale: 1 },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({ children }: React.PropsWithChildren<{}>) {
@@ -32,7 +37,7 @@ export default function RootLayout({ children }: React.PropsWithChildren<{}>) {
       className={clsx(
         'h-full font-lato antialiased',
         satisfy.variable,
-        lato.variable
+        lato.variable,
       )}
     >
       <head />
