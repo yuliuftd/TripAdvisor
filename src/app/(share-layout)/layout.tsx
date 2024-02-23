@@ -7,7 +7,7 @@ export default function ListingLayout({
   children,
 }: React.PropsWithChildren<{}>) {
   return (
-    <Suspense>
+    <Suspense fallback={<div>Loading</div>}>
       <Header />
       <main className="flex-grow">{children}</main>
       <Footer />
