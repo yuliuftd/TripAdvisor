@@ -27,7 +27,7 @@ const rateClasses = {
   firstStar:
     '[&>li>div>.rc-rate-star-first]:absolute [&>li>div>.rc-rate-star-first]:left-0 rtl:[&>li>div>.rc-rate-star-first]:right-0 [&>li>div>.rc-rate-star-first]:top-0 [&>li>div>.rc-rate-star-first]:w-1/2 [&>li>div>.rc-rate-star-first]:h-full [&>li>div>.rc-rate-star-first]:overflow-hidden',
   color:
-    '[&>.rc-rate-star-half>div>.rc-rate-star-first]:text-gray-dark [&>.rc-rate-star-full>div]:text-gray-dark',
+    '[&>.rc-rate-star-half>div>.rc-rate-star-first]:text-red-dark [&>.rc-rate-star-full>div]:text-red-dark',
   transition:
     '[&>li>div]:transition-all [&>li>div]:duration-300 [&>.rc-rate-star:hover]:scale-110',
 };
@@ -66,7 +66,7 @@ const Rate = forwardRef<any, RateProps>(
       className,
       ...props
     },
-    ref
+    ref,
   ) => {
     return (
       <div className={clsx('aegon-rate', className)}>
@@ -85,7 +85,7 @@ const Rate = forwardRef<any, RateProps>(
               className={clsx(
                 '[&>svg]:fill-current',
                 rateClasses.size[size],
-                characterClassName
+                characterClassName,
               )}
             >
               {Array.isArray(character)
@@ -98,14 +98,14 @@ const Rate = forwardRef<any, RateProps>(
             rateClasses.firstStar,
             rateClasses.color,
             !disabled && rateClasses.transition,
-            rateClassName
+            rateClassName,
           )}
           {...props}
         />
         {error && <p className="mt-1 text-xs text-red">{error}</p>}
       </div>
     );
-  }
+  },
 );
 
 Rate.displayName = 'Rate';

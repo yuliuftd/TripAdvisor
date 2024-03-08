@@ -38,6 +38,7 @@ export default function Header() {
                 <ProfileMenu className="hidden md:block" />
               ) : (
                 <Button
+                  variant="primary"
                   size="sm"
                   onClick={() => openModal('SIGN_IN')}
                   className="rounded-lg !px-4 py-2 text-sm capitalize md:text-base"
