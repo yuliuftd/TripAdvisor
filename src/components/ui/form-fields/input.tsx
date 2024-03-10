@@ -54,6 +54,7 @@ const inputClasses = {
           'border-green focus:enabled:border-green focus:ring-green/30 text-green-dark',
         warning:
           'border-orange focus:enabled:border-orange-dark/70 focus:ring-orange/30 text-orange-dark',
+        customise: '',
       },
     },
     flat: {
@@ -72,6 +73,7 @@ const inputClasses = {
           'bg-green-lighter/70 not-read-only:hover:enabled:bg-green-lighter/90 focus:ring-green/30 text-green-dark',
         warning:
           'bg-orange-lighter/80 not-read-only:hover:enabled:bg-orange-lighter/90 focus:ring-orange/30 text-orange-dark',
+        customise: '',
       },
     },
     outline: {
@@ -79,6 +81,8 @@ const inputClasses = {
       color: {
         DEFAULT:
           'not-read-only:hover:enabled:border-gray-1000 focus:border-gray-1000 not-read-only:focus:enabled:border-gray-1000 focus:ring-gray-900/20',
+        customise:
+          'not-read-only:hover:enabled:border-gray-1000 focus:border-red not-read-only:focus:enabled:border-gray-1000 focus:ring-gray-900/20',
         primary:
           'not-read-only:hover:enabled:border-primary not-read-only:focus:enabled:border-primary focus:ring-primary/30',
         secondary:
@@ -106,6 +110,7 @@ const inputClasses = {
           'hover:text-green-dark focus:ring-green/30 text-green placeholder:opacity-100',
         warning:
           'hover:text-orange-dark focus:ring-orange/30 text-orange placeholder:opacity-100',
+        customise: '',
       },
     },
   },
@@ -162,7 +167,7 @@ export interface InputProps
   variant?: keyof typeof inputClasses.variant;
   size?: keyof typeof inputClasses.size;
   rounded?: keyof typeof inputClasses.rounded;
-  color?: keyof (typeof inputClasses.variant)['active']['color'];
+  color?: keyof (typeof inputClasses.variant)['outline']['color'];
   placeholder?: string;
   disabled?: boolean;
   label?: string;
@@ -208,7 +213,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       helperText,
       ...inputProps
     },
-    ref
+    ref,
   ) => {
     const variantStyle = inputClasses.variant[variant];
     return (
@@ -224,7 +229,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           <div
             className={clsx(
               'relative',
-              (startIcon || endIcon || clearable) && inputClasses.size[size]
+              (startIcon || endIcon || clearable) && inputClasses.size[size],
             )}
           >
             {startIcon && (
@@ -235,7 +240,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                     ? 'z-[2] cursor-pointer'
                     : 'pointer-events-none',
                   inputClassesWithIcon.iconSize[size],
-                  startIconClassName
+                  startIconClassName,
                 )}
               >
                 {startIcon}
@@ -265,7 +270,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                 startIcon && inputClassesWithIcon.startPadding.size[size],
                 endIcon && inputClassesWithIcon.endPadding.size[size],
                 error && inputClasses.error,
-                inputClassName
+                inputClassName,
               )}
               {...inputProps}
             />
@@ -276,7 +281,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                 hasSuffix={Boolean(endIcon)}
                 className={clsx(
                   'absolute right-2 top-1/2 -translate-y-1/2',
-                  inputClearableClasses
+                  inputClearableClasses,
                 )}
               />
             )}
@@ -287,7 +292,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                   endIconClickable
                     ? 'z-[2] cursor-pointer'
                     : 'pointer-events-none',
-                  inputClassesWithIcon.iconSize[size]
+                  inputClassesWithIcon.iconSize[size],
                 )}
               >
                 {endIcon}
@@ -305,7 +310,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         )}
       </div>
     );
-  }
+  },
 );
 
 Input.displayName = 'Input';

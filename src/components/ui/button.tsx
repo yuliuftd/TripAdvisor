@@ -20,6 +20,13 @@ const classes = {
     pill: 'rounded-full',
   },
   variant: {
+    primary: {
+      base: 'border border-transparent',
+      color: {
+        DEFAULT:
+          'bg-red-dark text-white hover:enabled:bg-gray-900 focus:ring-gray-900/30 text-gray-0',
+      },
+    },
     solid: {
       base: 'border border-transparent',
       color: {
@@ -82,7 +89,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       disabled,
       ...buttonProps
     },
-    ref
+    ref,
   ) => {
     const variantStyle = classes.variant[variant];
     return (
@@ -99,7 +106,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           isLoading && 'pointer-events-none relative',
           disabled &&
             'cursor-not-allowed !border-gray-200 !bg-gray-100 !text-gray-400',
-          className
+          className,
         )}
         {...buttonProps}
       >
@@ -121,7 +128,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         )}
       </button>
     );
-  }
+  },
 );
 
 Button.displayName = 'Button';

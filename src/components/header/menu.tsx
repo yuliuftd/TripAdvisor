@@ -55,6 +55,7 @@ export default function Menu() {
             </div>
           ) : (
             <Button
+              variant="primary"
               onClick={() => openModal('SIGN_IN')}
               className="ml-5 rounded-lg px-6 py-2 text-sm capitalize md:text-base 4xl:px-8 4xl:py-2.5"
             >

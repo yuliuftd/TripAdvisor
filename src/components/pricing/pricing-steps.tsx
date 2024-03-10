@@ -9,17 +9,17 @@ import Text from '@/components/ui/typography/text';
 
 const steps = [
   {
-    icon: <ChatBubbleLeftRightIcon className="h-auto w-9 md:w-11" />,
+    icon: <ChatBubbleLeftRightIcon className="h-auto w-9 md:w-11 text-red" />,
     title: 'Share team inboxes',
     text: 'Browse our 5,000 designer dresses and accessories online or at our Melbourne warehouse.',
   },
   {
-    icon: <BoltIcon className="h-auto w-9 md:w-11" />,
+    icon: <BoltIcon className="h-auto w-9 md:w-11 text-red" />,
     title: 'Deliver instant answers',
     text: 'Browse our 5,000 designer dresses and accessories online or at our Melbourne warehouse.',
   },
   {
-    icon: <Square3Stack3DIcon className="h-auto w-9 md:w-11" />,
+    icon: <Square3Stack3DIcon className="h-auto w-9 md:w-11 text-red" />,
     title: 'Manage your team',
     text: 'Browse our 5,000 designer dresses and accessories online or at our Melbourne warehouse.',
   },

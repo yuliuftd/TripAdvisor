@@ -121,6 +121,7 @@ export default function FindTripForm() {
         popperClassName="homepage-datepicker"
       />
       <Button
+        variant="primary"
         type="submit"
         className="w-full !py-[14px] text-sm !font-bold uppercase leading-6 md:!py-[17px] md:text-base lg:!rounded-xl 3xl:!py-[22px]"
         rounded="lg"

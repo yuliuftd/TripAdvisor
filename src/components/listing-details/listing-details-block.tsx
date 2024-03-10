@@ -38,15 +38,15 @@ export default function ListingDetails() {
               averageRating={reviewsData.stats.averageRating}
               totalReviews={reviewsData.stats.totalReview}
             />
-            <div className="mt-4 w-full text-center 4xl:mt-8">
+            <div className="group mt-4 w-full text-center 4xl:mt-8">
               <Button
                 size="lg"
                 variant="text"
-                className="relative !p-0 !font-bold !text-secondary focus:!ring-0"
+                className="relative !p-0 !font-bold !text-secondary focus:!ring-0 group-hover:!text-red-dark"
                 onClick={() => openModal('REPORT_LISTING')}
               >
                 Report this listing
-                <span className="absolute bottom-0 left-0 w-full border border-gray"></span>
+                <span className="absolute bottom-0 left-0 w-full border border-gray group-hover:border-red-dark"></span>
               </Button>
             </div>
           </div>

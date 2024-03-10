@@ -23,7 +23,7 @@ export default function PricingCard({ pricingData }: PricingCardProps) {
     <div
       className={clsx(
         'relative w-full rounded-md border border-gray-lighter p-8 lg:rounded-xl lg:p-10 xl:p-12',
-        pricingData.isSuggested && 'md:shadow-lg'
+        pricingData.isSuggested && 'md:shadow-lg',
       )}
     >
       {pricingData.isSuggested && (
@@ -45,7 +45,7 @@ export default function PricingCard({ pricingData }: PricingCardProps) {
         </p>
         <Button
           size="xl"
-          className="mt-7 w-full !text-sm !font-bold capitalize lg:mt-9 lg:!text-base lg:!leading-[26px]"
+          className="mt-7 w-full !text-sm !font-bold capitalize lg:mt-9 lg:!text-base lg:!leading-[26px] hover:!bg-red"
         >
           get started
         </Button>

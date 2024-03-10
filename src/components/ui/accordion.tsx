@@ -22,11 +22,11 @@ export default function Accordion({ title, text }: AccordionProps) {
         <span
           className={clsx(
             'transform transition-all duration-200',
-            open ? 'rotate-180' : 'rotate-0'
+            open ? 'rotate-180' : 'rotate-0',
           )}
         >
           {open ? (
-            <MinusCircleIcon className="h-auto w-5 lg:w-8" />
+            <MinusCircleIcon className="h-auto w-5 lg:w-8 text-red" />
           ) : (
             <PlusCircleIcon className="h-auto w-5 lg:w-8" />
           )}
